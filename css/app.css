@@ -1,0 +1,211 @@
+/* General styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body {
+  background: url('../img/halftone-yellow.png'); /* Background pattern from Subtle Patterns */
+  font-family: "Lato", Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  width: 100vw;
+  background: #636360;
+}
+
+h1 {
+  font-weight: 400;
+  text-align: center;
+  color: #f9f8db;
+  padding: 0.1em;
+}
+
+/* Styles for the deck of cards */
+.deck {
+  max-width: 540px;
+  background: #f9f8db;
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deck .card {
+  height: 110px;
+  width: 110px;
+  margin: 10px;
+  background: #636360;
+  font-size: 0;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+  transform: rotateY(0);
+  cursor: default;
+}
+
+.deck .show {
+  display: flex;
+  color: white;
+  font-size: 20px;
+}
+
+.deck .card.match {
+  cursor: default;
+}
+
+.colorName {
+  display: none;
+}
+
+/* Styles for the Score Panel */
+.score-panel {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2em 0.8em;
+}
+
+.score-panel .stars,
+.score-panel .stars li,
+.timer {
+  display: inline-block;
+}
+
+.score-panel .stars li {
+  list-style: none;
+}
+
+.score-panel .restart {
+  float: right;
+  cursor: pointer;
+}
+
+/* Styles for the final Score Panel */
+.modal,
+.modal-over {
+  display: none;
+  position: fixed; /* This will maintain in place */
+  z-index: 1; /* This will maintain on top */
+  padding: 100px 0; /* This sets the location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0); /* This is the fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-inside,
+.modal-inside-over {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 25px;
+  text-align: center;
+}
+
+/* Styling the Close Button and the Play again button */
+.close,
+.close-over {
+  color: #aaa;
+  float: right;
+  font-size: 22px;
+  font-weight: bold;;
+}
+
+.close:hover,
+.close:focus,
+.close-over:hover,
+.close-over:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.win-button,
+.time-over-button  {
+  cursor: pointer;
+ }
+
+/* Styling the winner message */
+.moves-result,
+.star-result,
+.time-score {
+  font-size: 26px;
+  color: green;
+  font-weight: bold;
+}
+
+/* Styling the footer */
+footer {
+  text-align: center;
+  background: #f9f8db;
+  border-top: solid 1px #bdb6bd;
+  padding-bottom: 8px;
+  width: 100vw;
+  font-size: 0.8em;
+}
+
+.fa-github,
+.fa-linkedin-square {
+  font-size: 1.3em;
+  margin: 0 0.5em;
+}
+
+/* Adding media query for small screen */
+@media screen and (max-width: 539px) {
+  .deck {
+    width: 100vw;
+    height: 100vw;
+  }
+
+  .deck .card {
+    width: 20vw;
+    height: 20vw;
+    margin: 2.5vw;
+  }
+
+  .deck .show {
+    font-size: 16px;
+  }
+}

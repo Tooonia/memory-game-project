@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Matching Game</title>
+    <meta name="description" content="">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <header>
+        <h1>Memory Game</h1>
+    </header>
+
+    <div class="container">
+        <section class="score-panel">
+        	<ul class="stars">
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        	</ul>
+
+        	<span>Moves : <span class="moves">0</span></span>
+
+          <div class="timer">Timer : <span class="minutes-selector">00</span>:<span class="seconds-selector">00</span></div>
+
+          <div class="restart">
+        		<i class="fa fa-repeat"></i>
+        	</div>
+        </section>
+
+        <div id="win-message" class="modal">
+          <div class="modal-inside">
+            <span class="close">Close</span>
+            <p>Awesome! What a fantastic player you are!</p>
+            <p>It took you <span class="time-score minutes"></span><span class="more-minutes-plural"> minute</span> and <span class="time-score seconds"></span><span class="singular-second"> seconds</span>!!!</p>
+            <p>You made it with <span class="moves-result"></span> Moves and <span class="star-result"></span><span class="singular-to-add"> Stars</span></p>
+            <p>I am sure you can do even better!</p>
+            <button id="my-button" class="win-button">Play again!</button>
+          </div>
+        </div>
+
+        <div id="time-is-out-message" class="modal-over">
+          <div class="modal-inside-over">
+            <span class="close-over">Close</span>
+            <p>Oh no! Time is over!!!</p>
+            <p>I am sure you could do it!</p>
+            <p>Why don't you give it another try?</p>
+            <button id="my-button-over" class="time-over-button">Play again!</button>
+          </div>
+        </div>
+
+    </div>
+
+    <footer>
+      <p>Design and code by Tooonia © 2018</p>
+      <a href="https://github.com/Tooonia" class="fa fa-github"></a>
+      <a href="https://fr.linkedin.com/in/antonia-berei-nagy-655075106" class="fa fa-linkedin-square"></a>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
