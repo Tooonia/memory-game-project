@@ -20,6 +20,8 @@ let minutesText;
 
 function startTimer() {
   countingTime += 1;
+  const secondsNumberEl = document.querySelector('.seconds-selector');
+  const minutesNumberEl = document.querySelector('.minutes-selector');
 
   if (countingTime % 3600 === 0) {
     secondsText = 00;
@@ -27,11 +29,14 @@ function startTimer() {
     removingEventListenerFromCards();
     finishTimer();
     timeIsOver();
+  } else if (countingTime % 60 === 0) {
+    secondsText = 0;
+    minutesText += 1;
+  } else {
+    secondsText += 1;
   }
 
-  const secondsNumberEl = document.querySelector('.seconds-selector');
-  const minutesNumberEl = document.querySelector('.minutes-selector');
-  secondsNumberEl.innerHTML = countingTime % 60 < 10 ? '0' + countingTime % 60 : countingTime % 60;
+  secondsNumberEl.innerHTML = secondsText % 60 < 10 ? '0' + secondsText % 60 : secondsText % 60;
   minutesNumberEl.innerHTML = countingTime / 60 < 10 ? '0' + Math.floor(countingTime / 60) : Math.floor(countingTime / 60);
 }
 
